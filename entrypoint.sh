@@ -9,7 +9,7 @@ then
 else
     HOSTNAME=$(hostname)
 fi
-sed -i 's/hostname = .*/hostname = $HOSTNAME/' /etc/telegraf/telegraf.conf
+sed -i "s/  hostname = .*/  hostname = $HOSTNAME/" /etc/telegraf/telegraf.conf
 #hostname -F /etc/hostname
 export HOSTNAME
 if [ "${1:0:1}" = '-' ]; then
